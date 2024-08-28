@@ -1,0 +1,527 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Flomic</title>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .fluid {
+            width: 100%;
+            background-color: white;
+        }
+
+        .box {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: black;
+        }
+
+        .nav-links a {
+            color: grey;
+            padding: 0 10px;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .nav-bg {
+            padding: 10px 0;
+            background-color: white;
+        }
+
+        .nav-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            color: darkgreen;
+            font-style: italic;
+            font-size: 2rem;
+            margin-left: 10px;
+        }
+
+        .menu a {
+            padding: 10px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            color: green;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .cardholder {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+            background-image: url('./images/bg.jpeg');
+        }
+
+        .card {
+            width: 32%;
+            margin: 60px 0;
+            background-color: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            transition: 0.2s;
+            opacity: 0.8;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-heading {
+            background-color: #f3f3f3;
+            color: black;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .card-body {
+            font-size: 20px;
+            text-align: center;
+            background-color: white;
+            color: black;
+            min-height: 300px;
+            padding: 10px;
+        }
+
+        .card-readmore {
+            padding: 10px;
+            text-align: center;
+            background-color: green;
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            margin: 40px 0;
+        }
+
+        .left,
+        .right {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .left img {
+            width: 100%;
+            height: auto;
+        }
+
+        .readmore-card {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .readmore-card img {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+            border: 0.5rem solid white;
+        }
+
+        .readmore-p2 h2 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .readmore-p2 p {
+            margin: 5px 0;
+            font-size: 0.8rem;
+        }
+
+        .readmore-button {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+
+        .bottom-readmore {
+            margin-top: 40px;
+        }
+
+        .bottom-readmore h2 {
+            margin-bottom: 20px;
+        }
+
+        .bottom-readmore-card {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .bottom-readmore-main h2 {
+            margin: 0;
+            font-size: 1rem;
+            color: black;
+        }
+
+        .bottom-readmore-main .readmore-button {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        footer {
+            background-color: black;
+            color: grey;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .content-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+        }
+
+        .content-section img {
+            width: 50%;
+            height: auto;
+        }
+
+        .content-section h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .content-section p {
+            margin: 10px 0;
+            font-size: 0.9rem;
+            color: white;
+        }
+        .bottom-readmore {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.bottom-readmore-card {
+    display: flex;
+    align-items: center;
+    width: 48%;
+    background-color: #e9dddde7;
+    padding: 10px;
+}
+
+.bottom-readmore-card img {
+    width: 200px; 
+    height: auto;
+    margin-left: 100px;
+}
+
+.bottom-readmore-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+address {
+    background-color: black;
+    color: gray;
+  
+    & a:hover {
+      color: gray;
+      text-decoration: underline;
+    }
+  
+    & h2 {
+      margin: 0 0 2rem;
+      padding-bottom: 1rem;
+      font-size: 1.1rem;
+      border-bottom: 1px solid gray;
+    }
+  
+    & article {
+      width: var(--boxsize);
+      margin: 0 auto;
+      padding: 4rem 0;
+      display: flex;
+      gap: 2rem;
+  
+      & .address {
+        flex: 2;
+  
+        & p {
+          margin: 0;
+        }
+  
+        & a {
+          color: gray;
+        }
+      }
+  
+      & .quick-links {
+        flex: 1;
+  
+        & a {
+          color: gray;
+        }
+      }
+  
+      & .social-media {
+        flex: 1;
+  
+        & input {
+          background-color: lightgray;
+          border: none;
+          border-radius: 0;
+          color: grey;
+          padding: 0.5rem;
+          width: 100%;
+          outline: none;
+        }
+  
+        & button {
+          background-color: darkgreen;
+          border: none;
+          margin: 1rem 0;
+          font-size: 1.1em;
+          font-weight: bold;
+          padding: 0.5rem 1rem;
+          color: white;
+  
+          &:hover {
+            background-color: #6a9a36;
+          }
+        }
+  
+        & .icons {
+          display: flex;
+          background-color: white;
+          justify-content: space-evenly;
+          padding: 0.5rem 0;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  
+  i:hover {
+    color: darkgreen;
+    position: relative;
+    
+  }
+</style>
+</head>
+
+<body>
+    <div class="fluid">
+        <nav class="links">
+            <div class="nav-links">
+                <a href="#">LINK 1</a>
+                <a href="#">LINK 2</a>
+                <a href="#">LINK 3</a>
+                <a href="#">LINK 4</a>
+                <a href="#">LINK 5</a>
+            </div>
+            <div class="nav-links">
+                <a href="#">&#9743; +00 (123) 456 7890</a>
+                <a href="#">&#9993; INFO@DOMAIN.COM</a>
+            </div>
+        </nav>
+        <div class="box">
+          
+            <nav class="nav-bg">
+                <div class="nav-main">
+                    <div class="logo">
+                        <img src="logo.png" alt="Logo">
+                        <h1>FLOMIC<span> LOGISTICS PVT. LTD</span></h1>
+                    </div>
+                    <div class="menu">
+                        <a href="#">HOME</a>
+                        <a href="#">PAGES</a>
+                        <a href="#">LINK TEXT</a>
+                        <a href="#">LINK TEXT</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="cardholder">
+                <a class="card" href="#">
+                    <div class="card-heading">
+                        Consectetur Adipiscing<br />
+                        Elit Eiusmod
+                    </div>
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet,<br />
+                        consectetur adipiscing elit,<br />
+                        sed eiusmod tempor incididunt<br />
+                        ut labore et<br />
+                        dolore magna aliqua.
+                    </div>
+                    <div class="card-readmore">READ MORE &#10153;</div>
+                </a>
+                <a class="card" href="#">
+                    <div class="card-heading">
+                        Tempor Incidunt<br />
+                        Ut Labore Et
+                    </div>
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet,<br />
+                        consectetur adipiscing elit,<br />
+                        sed eiusmod tempor incididunt<br />
+                        ut labore et<br />
+                        dolore magna aliqua.
+                    </div>
+                    <div class="card-readmore">READ MORE &#10153;</div>
+                </a>
+                <a class="card" href="#">
+                    <div class="card-heading">
+                        Labore Et Dolore<br />
+                        Magna Aliqua
+                    </div>
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet,<br />
+                        consectetur adipiscing elit,<br />
+                        sed eiusmod tempor incididunt<br />
+                        ut labore et<br />
+                        dolore magna aliqua.
+                    </div>
+                    <div class="card-readmore">READ MORE &#10153;</div>
+                </a>
+            </div>
+            <div class="container">
+                <div class="left">
+                    <h1>LAUDATE DOMINUM OMNES GENTES</h1>
+                    <img src="service1.jpg" alt="Background">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, fugit?</p>
+                </div>
+                <div class="right">
+                    <article>
+                        <h2>LAUDATE DOMINUM OMNES GENTES</h2>
+                        <div class="readmore-card">
+                            <img src="air-freight.jpg" alt="Placeholder">
+                            <div class="readmore-p2">
+                                <h2>TE DEUM LAUDAMUS</h2>
+                                <p>By <a href="#">A Name</a> &nbsp; Friday, 6 April 2025</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt...</p>
+                                <button class="readmore-button">READ MORE &#10153;</button>
+                            </div>
+                        </div>
+                        <div class="readmore-card">
+                            <img src="air-freight.jpg" alt="Placeholder">
+                            <div class="readmore-p2">
+                                <h2>TE DOMINUM CONFITEMUR</h2>
+                                <p>By <a href="#">A Name</a> &nbsp; Friday, 6 April 2025</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt...</p>
+                                <button class="readmore-button">READ MORE &#10153;</button>
+                            </div>
+                        </div>
+                        <div class="readmore-card">
+                            <img src="air-freight.jpg" alt="Placeholder">
+                            <div class="readmore-p2">
+                                <h2>TE AETERNUM PATRIS</h2>
+                                <p>By <a href="#">A Name</a> &nbsp; Friday, 6 April 2025</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt...</p>
+                                <button class="readmore-button">READ MORE &#10153;</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <section class="bottom-readmore">
+                <div class="bottom-readmore-card">
+                    <div class="bottom-readmore-main">
+                        <h2>SIDO Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolor nihil modi! Maxime, iure.</p>
+                        <button class="readmore-button">READ MORE &#10153;</button>
+                    </div>
+                    <img src="air-rail.jpg" alt="Placeholder">
+                </div>
+                <div class="bottom-readmore-card">
+                    <div class="bottom-readmore-main">
+                        <h2>SIDO Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio dolor nihil modi! Maxime, iure.</p>
+                        <button class="readmore-button">READ MORE &#10153;</button>
+                    </div>
+                    <img src="sea-freigth.jpg" alt="Placeholder">
+                </div>
+            </section>
+        </div>
+        <address>
+          <article>
+            <div class="address">
+              <h2>LOREM IPSUM DOLAR</h2>
+              <p style="margin-bottom: 2rem">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                culpa qui officia deserunt mollit.
+              </p>
+              <p><a href="#"> Street Name & Number, Town, Postcode/Zip </a></p>
+              <p>
+                <a href="#"> &#9743;+00 (123) 456 7890</a>
+              </p>
+              <p>
+                <a href="#">&#9993;  INFO@DOMAIN.COM</a>
+              </p>
+            </div>
+            <div class="quick-links">
+              <h2>QUICK LINKS</h2>
+              <p><a href="#">Home Page</a></p>
+              <p><a href="#">Blog</a></p>
+              <p><a href="#">Gallery</a></p>
+              <p><a href="#">Portfolio</a></p>
+              <p><a href="#">Contact Us</a></p>
+            </div>
+            <div class="social-media">
+              <h2>KEEP IN TOUCH</h2>
+              <form>
+                <input type="email" placeholder="Email" />
+                <button type="submit">SUBMIT</button>
+              </form>
+              <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-pinterest"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-dribbble"></i>
+                <i class="fa fa-linkedin"></i>
+                <i class="fa fa-google"></i>
+                <i class="fa fa-youtube-play"></i>
+              </div>
+            </div>
+          </article>
+        </address>
+        <footer>
+            <p>&#169; 2025 All Rights Reserved. Flomic Logistics Pvt. Ltd.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
